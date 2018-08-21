@@ -13,8 +13,8 @@ public class Singleton {
      * 线程安全。
      */
     public static class Singleton0 {
-        // 对象唯一且不可变。
-        private static final Singleton0 instance = new Singleton0();
+        // 提前初始化
+        private static Singleton0 instance = new Singleton0();
 
         // 把构造函数设为私有以禁止他人创建实例。
         private Singleton0() {}
@@ -34,18 +34,20 @@ public class Singleton {
 
         private Singleton1() {}
 
-        // 非线程安全，当有多个线程执行这个方法时，有可能一个线程检查完instance==null，
-        // 而此时这个线程阻塞，就在此时另一个线程创建了一个对象，而之前那个线程重新执行，这时候就会出现多个对象。
+        // 一个线程写入instance的操作和另一个线程读取instance的操作之间不满足Happens-Before关系。
+        // 因此在发布对象时存在数据竞争问题，因此另一个线程并不一定能看到instance的状态。详情见《Java并发编程实战》P283。
+        // 也就是假设A线程看到instance为null，所以创建出一个实例对象，但在把对象引用写进instance时，
+        // 这时候线程B可能看到instance也为null，因此又创建了一个对象。
         public static Singleton1 getInstance() {
             if (instance == null) {
-                instance = new Singleton1();
+                instance = new Singleton1();    // 不安全的发布
             }
             return instance;
         }
     }
 
     /**
-     * 懒汉式，线程安全版本，效率不高。
+     * 懒汉式，线程安全版本，并发度不高。延迟初始化
      */
     public static class Singleton2 {
         private static Singleton2 instance = null;
@@ -62,9 +64,15 @@ public class Singleton {
     }
 
     /**
-     * 双重校验模式：加同步锁前后两次判断实例是否存在
+     * 双重检查加锁：加内置对象锁前后两次判断实例是否存在
+     * 注意：线程安全
+     * 虽然这是线程安全的，因为在共享的instance变量加上了volatile的同时也对instance的操作进行了同步，
+     * 但是这个模式已经被废弃了，详情见《Java并发编程实战》P286
      */
     public static class Singleton3 {
+        // 最重要的是加了volatile关键字，保证了instance的可见性和禁止重排序，
+        // 如果没有volatile关键字，则会导致对象的部分构造（由于对象引用的写入
+        // 操作与对象的域的写入操作会发生重排序而导致的），这是不安全的发布，是线程不安全的。
         private volatile static Singleton3 instance = null;
 
         private Singleton3() {}
@@ -83,12 +91,13 @@ public class Singleton {
     }
 
     /**
+     * 延长初始化占位类模式
      * 静态内部类法：把Singleton实例放到一个静态内部类中，这样就避免了静态实例在类加载的时候就创建对象，
      * 并且由于静态内部类只会被加载一次，所以这种写法也是线程安全的。
      */
     public static class Singleton4 {
         private static class SingletonHolder {
-            private static final Singleton4 instance = new Singleton4();
+            private static Singleton4 instance = new Singleton4();
         }
 
         private Singleton4() {}
@@ -103,11 +112,7 @@ public class Singleton {
      * 因此，《Effective Java》推荐尽可能地使用枚举来实现单例。
      */
     public enum Singleton5 {
-        INSTANCE;
-
-        public void doSomething() {
-            //
-        }
+        INSTANCE
     }
 
     public static void main(String[] args) {
