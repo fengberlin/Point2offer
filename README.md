@@ -66,3 +66,15 @@
 * [Problem 27：二叉树的镜像(反转二叉树)](./src/solution/InvertBinaryTree.java)
 
 * [Problem 28：对称的二叉树](./src/solution/SymmetricalBinaryTree.java)
+
+* [Problem 29：顺时针打印矩阵](./src/solution/PrintMatrix.java)
+
+* [Problem 30：包含min函数的栈](./src/solution/MinInStack.java)
+
+* [Problem 31：栈的压入、弹出序列](./src/solution/StackPushPopOrder.java)
+
+* [Problem 32(一)：从上到下打印二叉树](./src/solution/PrintTreeFromTop2Bottom.java)
+
+* [Problem 32(二)：分行从上到下打印二叉树](./src/solution/PrintTreeFromTop2Bottom.java)
+
+* [Problem 32(三)：之字形打印二叉树](./src/solution/PrintTreeInZigzag.java)
