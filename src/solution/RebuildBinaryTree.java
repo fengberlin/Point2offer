@@ -22,6 +22,14 @@ public class RebuildBinaryTree {
         }
     }
 
+    public static TreeNode rebuild(int[] PreOrder, int[] InOrder) {
+
+        TreeNode root = rebuildCore(PreOrder, 0, PreOrder.length - 1,
+                InOrder, 0, InOrder.length - 1);
+
+        return root;
+    }
+
     public static TreeNode rebuildCore(int[] PreOrder, int startPreOrder,
                                        int endPreOrder, int[] InOrder, int startInOrder, int endInOrder) {
         
@@ -53,14 +61,4 @@ public class RebuildBinaryTree {
 
         return root;
     }
-
-    public static TreeNode rebuild(int[] PreOrder, int[] InOrder) {
-
-        TreeNode root = rebuildCore(PreOrder, 0, PreOrder.length - 1,
-                InOrder, 0, InOrder.length - 1);
-
-        return root;
-    }
-
-
 }
