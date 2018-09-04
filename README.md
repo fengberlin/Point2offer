@@ -75,6 +75,24 @@
 
 * [Problem 32(一)：从上到下打印二叉树](./src/solution/PrintTreeFromTop2Bottom.java)
 
-* [Problem 32(二)：分行从上到下打印二叉树](./src/solution/PrintTreeFromTop2Bottom.java)
+* [Problem 32(二)：分行从上到下打印二叉树](./src/solution/PrintTreeInLines.java)
 
 * [Problem 32(三)：之字形打印二叉树](./src/solution/PrintTreeInZigzag.java)
+
+* [Problem 33：二叉搜索树的后序遍历序列](./src/solution/PostOrderOfBST.java)
+
+* [Problem 34：二叉树中和为某一值的路径](./src/solution/PathInTree.java)
+
+* [Problem 35：复杂链表的复制](./src/solution/CopyComplexLinkedList.java)
+
+* [Problem 36：二叉搜索树与双向链表](./src/solution/BinaryTree2List.java)
+
+* [Problem 37：序列化二叉树](./src/solution/SerializeBinaryTree.java)
+
+* [Problem 38：字符串的排列](./src/solution/StringPermutation.java)
+
+* [字符串的组合](./src/solution/Combiantion.java)
+
+* [Problem 39：数组中出现次数超过一半的数字](./src/solution/MoreThanHalf.java)
+
+* [Problem 40：最小的k个数](./src/solution/KLeastNumbers.java)
