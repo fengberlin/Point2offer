@@ -14,7 +14,7 @@ public class NumOf1InBinary {
     // 只要这个数与1相与，当那个是1的位与1相与时，通过判断不为0，则1的个数加1。
     // 缺点：当输入的数是负数的时候，当进行有符号的右移时，移位后最高位会设为1，
     // 所以一直进行右移的话，最后这个数字的所有位都是1，最终陷入死循环状态。
-    public static int numOf1_solution0(int number) {
+    public int numOf1_solution0(int number) {
 
         int count = 0;
 
@@ -32,7 +32,7 @@ public class NumOf1InBinary {
     // 方法2
     // 为了避免死循环，我们可以先将这个数与1相与，判断这个数的最低位是否为1，
     // 以此类推不断将1左移，再判断这个数的次低位是否为1。
-    public static int numOf1_solution1(int number) {
+    public int numOf1_solution1(int number) {
 
         int count = 0;
         int flag = 1;
@@ -57,7 +57,7 @@ public class NumOf1InBinary {
     // 如果再进行这个数与减去了1的这个数相与，就相当于把从最右边数起的1变成0，得到1000。
     // 所以我们只要再进行这样的操作，就能把这个数的二进制数的所有1变成0，这样记录下这样的
     // 操作次数，就能计算出1的个数。
-    public static int numOf1_solution2(int number) {
+    public int numOf1_solution2(int number) {
 
         int count = 0;
         while (number != 0) {
@@ -67,8 +67,4 @@ public class NumOf1InBinary {
         return count;
     }
 
-    public static void main(String[] args) {
-        System.out.println(Integer.toBinaryString(100));
-        System.out.println(numOf1_solution2(100));
-    }
 }
