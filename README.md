@@ -9,7 +9,7 @@
 * [Problem 4：二维数组中的查找](./src/solution/FindInPartiallySortedMatrix.java)
 
 * [Problem 5：替换空格](./src/solution/ReplaceSpaces.java)
-    * [相关题目](./src/solution/CopyAnother.java)
+    * [相关题目：把两个排序数组归并到一个数组](./src/solution/CopyAnother.java)
     
 * [Problem 6：从尾到头打印链表](./src/solution/PrintLinkedList.java)
 
