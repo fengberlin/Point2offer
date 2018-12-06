@@ -21,7 +21,7 @@ public class ContinuousSquenceWithSum {
         int small = 1;
         int big = 2;
         while (small < big) {
-            int curSum = (small + big) * (big - small + 1) / 2;    // 等差数列的求和公式
+            int curSum = ((small + big) * (big - small + 1)) >> 1;    // 等差数列的求和公式
             if (curSum < sum) {
                 big++;
             } else if (curSum > sum) {

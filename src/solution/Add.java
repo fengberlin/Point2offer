@@ -7,9 +7,9 @@ package solution;
  */
 public class Add {
 
-    public int add(int a, int b) {
+    public long add(long a, long b) {
 
-        int sum = 0, carry = 0;
+        long sum, carry;
         do {
             sum = a ^ b;    // 各位相加
             carry = (a & b) << 1;    // 计算进位
@@ -21,6 +21,6 @@ public class Add {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Add().add(5, 17));
+        System.out.println(new Add().add(2147483647, 1));
     }
 }

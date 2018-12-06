@@ -9,10 +9,10 @@ public class RectangleCover {
 
     public static long cover(int n) {
 
-        int[] result = {0, 1, 2};
-
-        if (n <= 2) {
-            return result[n];
+        if (n < 0) {
+            return -1;
+        } else if (n <= 2) {
+            return n;
         }
 
         long n1 = 1, n2 = 2, sum = 0;

@@ -6,7 +6,7 @@ package solution;
  */
 public class Fibonacci {
 
-    // 递归
+    // 递归 时间复杂度O(2^n)
     public static long fibonacci_recursively(int n) {
 
         if (n == 0) {
@@ -20,13 +20,13 @@ public class Fibonacci {
         return fibonacci_recursively(n - 1) + fibonacci_recursively(n - 2);
     }
 
-    // 循环
+    // 循环 时间复杂度O(n)
     public static long fibonacci_loop(int n) {
 
-        int[] result = {0, 1};
-
-        if (n < 2) {
-            return result[n];
+        if (n < 0) {
+            return -1;
+        } else if (n < 2) {
+            return n;
         }
 
         long n0 = 0, n1 = 1, sum = 0;
@@ -43,6 +43,6 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        System.out.println(fibonacci_loop(5));
+        System.out.println(fibonacci_loop(6));
     }
 }

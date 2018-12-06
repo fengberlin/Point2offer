@@ -20,7 +20,7 @@ public class MissingNumber {
         while (start <= end) {
             mid = ((end - start) >> 1) + start;
             if (data[mid] != mid) {
-                // 如果mid不等于data[mid]然而data[mid-1]等于mid-1,说明data[mid]正好时那个确实的数
+                // 如果mid不等于data[mid]然而data[mid-1]等于mid-1,说明data[mid]正好是那个缺失的数
                 if (mid == 0 || data[mid - 1] == mid - 1) {
                     return mid;
                 } else {

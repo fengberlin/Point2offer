@@ -1,6 +1,6 @@
 package solution;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,25 +33,28 @@ public class LastNumberInCircle {
         if(n==1)
             return 0;
         else
+            // 这里考虑的是一些数学公式的推导，具体请看剑指offer
             return (getLastNumberInCircle(n - 1, m) + m) % n;
     }
 
+    // 最好理解的做法
     public int getLastNumberInCircle1(int n, int m) {
 
         if (n == 0 || m == 0) {
             return -1;
         }
 
-        List<Integer> list = new LinkedList<>();
+        // 这里要用ArrayList，因为涉及到随机读取，数组比链表效率要高
+        List<Integer> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             list.add(i);
         }
 
-        int index = -1;
+        int index = 0;
         while (list.size() > 1) {
-            index = (index + m) % list.size();
+            // 模拟环形链表，要删除第m个数，其实是要删除index为m-1的数
+            index = (index + m - 1) % list.size();
             list.remove(index);
-            index--;
         }
 
         return list.get(0);

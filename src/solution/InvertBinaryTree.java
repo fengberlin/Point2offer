@@ -1,6 +1,7 @@
 package solution;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * // 面试题27：二叉树的镜像(也即反转二叉树)
@@ -40,19 +41,19 @@ public class InvertBinaryTree {
             return root;
         }
 
-        LinkedList<BinaryTreeNode> nodes = new LinkedList<>();
-        nodes.offer(root);
+        Queue<BinaryTreeNode> queue = new LinkedList<>();
+        queue.offer(root);
         BinaryTreeNode node;
-        while (nodes.size() > 0) {
-            node = nodes.poll();
+        while (queue.size() > 0) {
+            node = queue.poll();
             BinaryTreeNode temp = node.left;
             node.left = node.right;
             node.right = temp;
             if (node.left != null) {
-                nodes.offer(node.left);
+                queue.offer(node.left);
             }
             if (node.right != null) {
-                nodes.offer(node.right);
+                queue.offer(node.right);
             }
         }
         return root;

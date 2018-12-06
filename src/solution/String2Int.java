@@ -9,6 +9,10 @@ public class String2Int {
 
     private boolean valid;
 
+    public String2Int() {
+        valid = true;
+    }
+
     public boolean isValid() {
         return valid;
     }
@@ -37,13 +41,16 @@ public class String2Int {
         while (i < len) {
             digit = str.charAt(i++) - '0';    // 将字符转换成数字。因为char类型的字符（如果是数字）相减其实是计算两个数的距离
             if (digit >= 0 && digit <= 9) {
-                if (result > Integer.MAX_VALUE / 10 || (result == Integer.MAX_VALUE / 10 && digit - '0' > 7)) {
-                    if (sign == 1) {
-                        valid = false;
-                        return 0;    // 正数溢出
-                    } else {
-                        valid = false;
-                        return 0;    // 负数溢出
+                if (result > Integer.MAX_VALUE / 10) {
+                    valid = false;
+                    return 0;
+                } else if (result == Integer.MAX_VALUE / 10) {
+                    if (sign == 1 && digit > 7) {
+                        valid = false;    // 正数溢出
+                        return 0;
+                    } else if (sign == -1 && digit > 8) {
+                        valid = false;    // 负数溢出
+                        return 0;
                     }
                 }
                 result = result * 10 + digit;

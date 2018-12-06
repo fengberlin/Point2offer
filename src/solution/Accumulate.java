@@ -10,7 +10,7 @@ public class Accumulate {
     // 短路求值，不需要用到if语句判断递归结束条件
     public long getSum(int n) {
 
-        int sum = n;
+        long sum = n;
         boolean bool = sum != 0 && (sum += getSum(n - 1)) > 0;
         return sum;
     }

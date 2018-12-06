@@ -14,6 +14,7 @@ public class PowOf2 {
             return false;
         }
 
+        // 判断这个数的二进制数是否只包含一个1
         if ((number & (number - 1)) == 0) {
             return true;
         }

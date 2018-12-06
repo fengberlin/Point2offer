@@ -38,8 +38,17 @@ public class CopyAnother {
             }
         }
 
-        while (bIndex >= 0) {
-            a[newIndex--] = b[bIndex--];
+        if (aIndex >= 0) {
+            while (aIndex >= 0) {
+                a[newIndex--] = a[aIndex--];
+            }
+        }
+
+
+        if (bIndex >= 0) {
+            while (bIndex >= 0) {
+                a[newIndex--] = b[bIndex--];
+            }
         }
 
     }
@@ -47,16 +56,21 @@ public class CopyAnother {
 
     public static void main(String[] args) {
 
-        int[] a = new int[10];
-        int[] b = {1, 2, 3, 4, 5};
+        int[] a = new int[50];
+        int[] b = {1, 2, 3, 4, 12, 17};
 
         a[0] = 2;
         a[1] = 4;
         a[2] = 7;
+        a[3] = 8;
+        a[4] = 9;
+        a[5] = 10;
+        a[6] = 13;
+        a[7] = 15;
 
-        copy(a, 3, b, 5);
+        copy(a, 8, b, 6);
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 14; i++) {
             System.out.print(a[i] + " ");
         }
 

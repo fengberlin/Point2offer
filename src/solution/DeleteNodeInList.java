@@ -26,22 +26,19 @@ public class DeleteNodeInList {
             return;
         }
 
-        if (node.next != null) {
+        if (node.next != null) {    // 非尾节点的情况
             node.value = node.next.value;
             node.next = node.next.next;
-            return;
-        } else if (head == node){
+        } else if (head == node){    // 只有一个节点的情况
             head = null;
             node = null;
-            return;
-        } else {
+        } else {    // 要删除的节点是尾节点的情况
             ListNode p = head;
             while (p.next != node) {
                 p = p.next;
             }
             p.next = null;
             node = null;
-            return;
         }
     }
 

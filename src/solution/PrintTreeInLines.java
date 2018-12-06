@@ -32,7 +32,7 @@ public class PrintTreeInLines {
         while (!queue.isEmpty()) {
             BinaryTreeNode node = queue.poll();
             now--;
-            System.out.println(node.value);
+            System.out.print(node.value);
             if (node.left != null) {
                 queue.offer(node.left);
                 next++;

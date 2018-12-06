@@ -68,6 +68,7 @@ public class NumbersAppearOnce {
 
         number = number >> position;
         return ((number & 1) == 1);
-    }
 
+        // return ((number & (1 << position)) == (1 << position));
+    }
 }

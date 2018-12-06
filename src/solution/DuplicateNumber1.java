@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class DuplicateNumber1 {
 
-    // 方法1：时间复杂度为O(n)，空间复杂度为O(n)，没有修改原数组，但是需要一个额外的数组空间。
+    // 方法1：时间复杂度为O(n)，空间复杂度为O(n)，没有修改原数组，但是需要一个额外的空间。
     // 一边扫描数组，并检查下一个要扫描的数是否已经存在散列表里面，如果不存在，则加入到散列表，否则就返回第一个重复的数字。
     public static int findDuplicateNumberWithNoMod0(int[] a) {
         if (a == null) {

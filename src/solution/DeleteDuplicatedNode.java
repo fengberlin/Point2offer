@@ -35,10 +35,10 @@ public class DeleteDuplicatedNode {
                 p = p.next;
             } else {
                 int value = p.value;
-                ListNode deleted = p;
+                ListNode deleted = p.next;
                 while (deleted != null && deleted.value == value) {
                     p.next = deleted.next;
-                    deleted = p.next;
+                    deleted = deleted.next;
                 }
                 if (pre == null) {
                     head = p.next;

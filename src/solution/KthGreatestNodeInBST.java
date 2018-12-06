@@ -3,8 +3,8 @@ package solution;
 import java.util.LinkedList;
 
 /**
- * 面试题54：二叉搜索树的第k个结点
- * 题目：给定一棵二叉搜索树，请找出其中的第k大的结点。
+ * 面试题54：二叉搜索树的第k大结点
+ * 题目：给定一棵二叉搜索树，请找出其中的第k大的结点(从小到大排序后)。
  */
 public class KthGreatestNodeInBST {
 

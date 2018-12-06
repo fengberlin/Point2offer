@@ -163,7 +163,7 @@
 
 * [Problem 61：扑克牌的顺子](src/solution/ContinousCards.java)
 
-* [Problem 62：圆圈中最后剩下的数字](src/solution/ContinousCards.java)
+* [Problem 62：圆圈中最后剩下的数字](src/solution/LastNumberInCircle.java)
 
 * [Problem 63：股票的最大利润](src/solution/MaximalProfit.java)
 

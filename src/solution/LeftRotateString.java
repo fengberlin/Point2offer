@@ -19,6 +19,7 @@ public class LeftRotateString {
             throw new RuntimeException("invalid input.");
         }
 
+        // 把字符串转换为字符数组，在调换字符的时候可以不用频繁地创建新的字符串，避免额外的开销
         char[] data = str.toCharArray();
         reverse(data, 0, data.length - 1);
         reverse(data, 0, data.length - k - 1);

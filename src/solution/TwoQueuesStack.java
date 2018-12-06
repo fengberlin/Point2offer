@@ -1,6 +1,7 @@
 package solution;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Author：Berlin
@@ -9,10 +10,11 @@ import java.util.LinkedList;
  */
 public class TwoQueuesStack {
 
-    private LinkedList<Integer> queue1;
-    private LinkedList<Integer> queue2;
+    private Queue<Integer> queue1;
+    private Queue<Integer> queue2;
 
     public TwoQueuesStack() {
+        // queue1作为pop操作的所在队列
         queue1 = new LinkedList<>();
         queue2 = new LinkedList<>();
     }
@@ -31,27 +33,18 @@ public class TwoQueuesStack {
             throw new NullPointerException("栈不存在。");
         }
 
-        if (queue1.size() == 0 && queue2.size() == 0) {
+        if (queue1.size() == 0) {
             throw new RuntimeException("栈为空。");
         }
 
-        int value = -1;
-
-        if (queue1.size() == 0 || queue2.size() == 0) {
-            if (queue1.size() == 0) {
-                while (queue2.size() > 1) {
-                    queue1.offer((queue2.remove()));
-                }
-                value = queue2.remove();
-            } else {
-                while (queue1.size() > 1) {
-                    queue2.offer(queue1.remove());
-                }
-                value = queue1.remove();
-            }
+        while (queue1.size() > 1) {
+            queue2.offer(queue1.remove());
         }
-
-        return value;
+        int result = queue1.remove();
+        Queue<Integer> temp = queue1;
+        queue1 = queue2;
+        queue2 = temp;
+        return result;
     }
 
     public static void main(String[] args) {
