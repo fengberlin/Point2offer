@@ -19,7 +19,7 @@ public class MaxValueInSlidingWindow {
             return list;
         }
 
-        Queue<Integer> queue = new PriorityQueue<>((v1, v2) -> v2 - v1);
+        Queue<Integer> queue = new PriorityQueue<>(n, (v1, v2) -> v2 - v1);
         for (int i = 0; i <= data.length - n; i++) {
             for (int j = i; j < n + i; j++) {
                 queue.offer(data[j]);

@@ -24,21 +24,21 @@ public class String2Int {
             return 0;
         }
         int result = 0;
-        int i = 0, len = str.length();
+        int i = 0;
         int sign = 1;
         int digit = str.charAt(0);   // 判断第一个字符
 
         if (digit == '-' || digit == '+') {
             sign = (digit == '-') ? -1 : 1;
 
-            if (len == 1) {
+            if (str.length() == 1) {
                 valid = false;
                 return 0;    // 只有一个符号
             }
             i++;
         }
 
-        while (i < len) {
+        while (i < str.length()) {
             digit = str.charAt(i++) - '0';    // 将字符转换成数字。因为char类型的字符（如果是数字）相减其实是计算两个数的距离
             if (digit >= 0 && digit <= 9) {
                 if (result > Integer.MAX_VALUE / 10) {

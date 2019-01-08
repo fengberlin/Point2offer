@@ -1,5 +1,6 @@
 package solution;
 
+import java.util.BitSet;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -90,6 +91,32 @@ public class DuplicateNumber1 {
                 return a[i];
             }
             k[a[i]] = true;
+        }
+        return -1;
+    }
+
+    // 使用bitset，更省空间
+    public static int findDuplicateNumber(int[] a) {
+
+        if (a == null) {
+            throw new NullPointerException("空对象。");
+        }
+
+        if (a.length == 0) {
+            throw new IllegalArgumentException("空数组。");
+        }
+
+
+        BitSet bitSet = new BitSet();
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] < 0 || a[i] > a.length - 1) {
+                throw new IllegalArgumentException("数组内元素不满足题意。");
+            }
+
+            if (bitSet.get(a[i]) == true) {
+                return a[i];
+            }
+            bitSet.set(a[i]);
         }
         return -1;
     }

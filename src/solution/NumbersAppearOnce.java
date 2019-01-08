@@ -66,9 +66,6 @@ public class NumbersAppearOnce {
     // 判断从右边数起的position位是否为1(position从0开始)
     public boolean isBit1(int number, int position) {
 
-        number = number >> position;
-        return ((number & 1) == 1);
-
-        // return ((number & (1 << position)) == (1 << position));
+        return (number & (1 << position)) == 1;
     }
 }

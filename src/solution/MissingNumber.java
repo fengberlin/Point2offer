@@ -11,7 +11,7 @@ public class MissingNumber {
     public int getMissingNumber(int[] data) {
 
         if (data == null || data.length == 0) {
-            return 0;
+            return -1;
         }
 
         int start = 0;

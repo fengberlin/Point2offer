@@ -64,7 +64,7 @@ public class StringPermutation {
         //           /      \
         //         a|b|c   a|c|b
 
-        //3.回到状态A之后，继续for循环，j=1,即swap(ch,0,1)，即"bac",这个状态可以再次叫做状态A,下面的步骤同上
+        //3.回到状态A之后，继续for循环，j=1,即swap(ch,0,1)，即"bac",这个状态可以再次叫做状态B,下面的步骤同上
         /////////////-------》此时结果集为["abc","acb","bac","bca"]
 
         //             a|b|c(状态A)
@@ -77,7 +77,7 @@ public class StringPermutation {
         //           /      \
         //         b|a|c   b|c|a
 
-        //4.再继续for循环，j=2,即swap(ch,0,2)，即"cab",这个状态可以再次叫做状态A，下面的步骤同上
+        //4.再继续for循环，j=2,即swap(ch,0,2)，即"cab",这个状态可以再次叫做状态B，下面的步骤同上
         /////////////-------》此时结果集为["abc","acb","bac","bca","cab","cba"]
 
         //             a|b|c(状态A)

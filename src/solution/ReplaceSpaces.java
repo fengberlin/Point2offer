@@ -9,7 +9,7 @@ package solution;
 public class ReplaceSpaces {
 
     // 方法1：时间复杂度为O(n)，空间复杂度为O(n)。
-    // 这个方法简单易懂，但是缺点是使用了额外的存储空间。
+    // 这个方法简单易懂。
     public static void replaceBlank0(String str) {
 
         if (str == null || str.length() == 0) {

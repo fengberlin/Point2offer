@@ -38,9 +38,8 @@ public class PathInTree {
 
         findPath(root.left, target);
         findPath(root.right, target);
-        // 删去末尾的节点
+        // 删去末尾的节点，因为这个节点已经不符合要求了（比如说左子节点不符合，那么要删掉之后回溯到父节点再去访问右子节点）
         list.remove(list.size() - 1);
         return result;
-
     }
 }

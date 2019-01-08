@@ -45,13 +45,13 @@ public class MergeSortedList {
                 p1 = p1.next;
             }
         }
-        if (p0 != null || p1 != null) {
-            if (p0 != null) {
-                tail.next = p0;
-            } else {
-                tail.next = p1;
-            }
+
+        if (p0 != null) {
+            tail.next = p0;
+        } else if (p1 != null) {
+            tail.next = p1;
         }
+
         return leader;
     }
 

@@ -28,8 +28,8 @@ public class KthNodeFromEnd {
         }
 
         ListNode p1 = head;
-        ListNode p2 = null;
 
+        // 走k-1步即走k个节点
         for (int i = 0; i < k - 1; i++) {
             if (p1.next != null) {
                 p1 = p1.next;
@@ -38,7 +38,7 @@ public class KthNodeFromEnd {
             }
         }
 
-        p2 = head;
+        ListNode p2 = head;
         while (p1.next != null) {
             p1 = p1.next;
             p2 = p2.next;

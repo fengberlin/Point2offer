@@ -102,7 +102,7 @@ public class KLeastNumbers {
         });
 
         for (int i = 0; i < data.length; i++) {
-            if (maxHeap.size() != k) {
+            if (maxHeap.size() < k) {
                 maxHeap.offer(data[i]);
             } else if (maxHeap.peek() > data[i]) {
                 maxHeap.poll();

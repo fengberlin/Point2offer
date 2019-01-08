@@ -23,9 +23,11 @@ public class MinInStack {
         data.push(item);
         if (min.size() == 0 || min.peek() > item) {
             min.push(item);
+            return;
         }
         if (min.peek() <= item) {
             min.push(min.peek());
+            return;
         }
     }
 

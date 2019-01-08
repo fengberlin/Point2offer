@@ -17,7 +17,7 @@ import java.util.LinkedList;
  */
 public class StackPushPopOrder {
 
-    public boolean isPopOrder(int[] pushA,int[] popA) {
+    public boolean isPopOrder(int[] pushA, int[] popA) {
         if (pushA.length == 0 || popA.length == 0) {
             return false;
         }

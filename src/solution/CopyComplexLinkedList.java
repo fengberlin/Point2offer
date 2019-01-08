@@ -43,6 +43,8 @@ public class CopyComplexLinkedList {
         while (pHead != null) {
             if (pHead.sibling != null) {
                 pHead.next.sibling = pHead.sibling.next;
+            }
+            if (pHead.next != null) {
                 pHead = pHead.next.next;
             }
         }

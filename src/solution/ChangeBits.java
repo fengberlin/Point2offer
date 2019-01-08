@@ -13,8 +13,8 @@ public class ChangeBits {
         int count = 0;
 
         while (result != 0) {
-            count++;
             result = result & (result - 1);
+            count++;
         }
 
         return count;

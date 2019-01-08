@@ -99,7 +99,6 @@ public class FrequencyOfNumber {
 //        } else {
 //            return mid;
 //        }
-        int length = data.length;
         int mid;
         while (start <= end) {
             mid = ((end - start) >> 1) + start;

@@ -57,4 +57,17 @@ public class DepthOfBinaryTree {
 
         return depth;
     }
+
+    // 打印最长路径的所有节点
+    public void printLongest(BinaryTreeNode root) {
+
+        if (root != null) {
+            System.out.println(root.value);
+            if (getDepth(root.left) > getDepth(root.right)) {
+                printLongest(root.left);
+            } else {
+                printLongest(root.right);
+            }
+        }
+    }
 }

@@ -15,7 +15,7 @@ public class Add {
             carry = (a & b) << 1;    // 计算进位
             a = sum;
             b = carry;
-        } while (b != 0);    // 重复执行知道不产生进位为止
+        } while (b != 0);    // 重复执行直到不产生进位为止
 
         return a;
     }
